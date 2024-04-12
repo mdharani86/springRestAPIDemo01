@@ -1,6 +1,5 @@
 package com.dharani.demo01;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -23,13 +22,6 @@ public class RestApiDemoController {
 
     public RestApiDemoController(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
-
-        this.coffeeRepository.saveAll(List.of(
-                    new Coffee("Cafe Cereza"),
-                    new Coffee("CAfe Ganador"),
-                    new Coffee("Cafe Lareno"),
-                    new Coffee("Cafe Tres Pontas")
-        ));
     }
 
     // @RequestMapping(value = "/coffees", method=RequestMethod.GET) this is equivalent to 
@@ -51,9 +43,9 @@ public class RestApiDemoController {
     @PutMapping("/{id}")
     public ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee) {
 
-        return (!coffeeRepository.existsById(id)) ? 
-                    new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED) :
-                    new ResponseEntity<>(coffeeRepository.save(coffee),HttpStatus.OK);
+        return (coffeeRepository.existsById(id)) ? 
+                    new ResponseEntity<>(coffeeRepository.save(coffee),HttpStatus.OK) :
+                    new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}") 
