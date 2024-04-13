@@ -1,4 +1,4 @@
-package com.dharani.demo01;
+package com.dharani.demo01.pojo;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;

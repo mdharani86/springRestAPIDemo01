@@ -1,4 +1,4 @@
-package com.dharani.demo01;
+package com.dharani.demo01.Controllers;
 
 import java.util.Optional;
 
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.dharani.demo01.CoffeeRepository;
+import com.dharani.demo01.pojo.Coffee;
 
 
 @RestController

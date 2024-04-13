@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.dharani.demo01.pojo.Coffee;
+
 import jakarta.annotation.PostConstruct;
 
 
